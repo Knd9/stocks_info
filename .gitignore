@@ -1,0 +1,10 @@
+__pycache__/
+.vscode
+.DS_Store
+stock/.DS_Store
+stock/__pycache__/
+stock/core/__pycache__/
+stock/db/__pycache__/
+.git
+data/*.json
+img/*.png

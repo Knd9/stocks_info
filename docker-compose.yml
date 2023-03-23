@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  db:
+    container_name: db-stock
+    image: postgres:14.1-alpine
+    env_file:
+      - ./.env
+    ports:
+      - "5432:5432"
+
+  stock:
+    container_name: fastapi-app
+    build:
+      context: .
+    env_file:
+      - ./.env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./stock:/stock
+    restart: always
+    depends_on:
+      - db
